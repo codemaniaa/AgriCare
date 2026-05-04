@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2d6a4f" />
+    <meta name="description" content="AgriCare – Pakistan's Agriculture Marketplace" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>AgriCare – Agriculture Marketplace</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: #f8fdf9;
+        color: #1a2e1d;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #f0faf2; }
+      ::-webkit-scrollbar-thumb { background: #74c69d; border-radius: 3px; }
+      /* Mobile bottom nav spacing */
+      @media (max-width: 768px) {
+        body { padding-bottom: 64px; }
+        .sidebar-desktop { display: none !important; }
+      }
+      /* Hover states */
+      a { transition: opacity 0.15s; }
+      a:hover { opacity: 0.85; }
+      button { transition: opacity 0.15s, transform 0.1s; }
+      button:active:not(:disabled) { transform: scale(0.97); }
+      button:disabled { opacity: 0.6; cursor: not-allowed; }
+      /* Input focus */
+      input:focus, select:focus, textarea:focus {
+        border-color: #40916c !important;
+        box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.1);
+      }
+      /* Category chip hover */
+      .cat-item:hover { background: #f0faf2 !important; }
+      /* Card hover */
+      .product-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run AgriCare.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

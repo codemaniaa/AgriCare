@@ -1,0 +1,73 @@
+/* =======================================================
+   src/pages/landing/landing.css
+   Import this ONCE in your main index.jsx / App.jsx:
+     import './pages/landing/landing.css';
+   ======================================================= */
+
+/* ── Google Fonts ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* ── Clash Display (self-hosted fallback via CDN) ──────── */
+/* If you own Clash Display, put it in /public/fonts/ and
+   use @font-face below instead.                           */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
+/* ── CSS custom properties (extend Tailwind theme) ──────── */
+:root {
+  --color-green:    #3ddc6c;
+  --color-green2:   #5fee8a;
+  --color-lime:     #a8f059;
+  --color-bg:       #0a1f0d;
+  --color-bg2:      #0d2e14;
+  --color-bg3:      #0f3d1c;
+  --color-text:     #e8f5ec;
+  --color-text-dim: #8ab498;
+}
+
+/* ── Font family utilities ──────────────────────────────── */
+.font-display { font-family: 'Clash Display', 'Sora', sans-serif; }
+.font-sans    { font-family: 'Sora', sans-serif; }
+.font-mono    { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+/* ── Keyframe animations (used via Tailwind arbitrary values) ── */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Register them with Tailwind so you can use
+   animate-[revealUp_...] in className props      */
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0a1f0d; }
+::-webkit-scrollbar-thumb { background: #0f3d1c; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3ddc6c; }
+
+/* ── Selection colour ───────────────────────────────────── */
+::selection { background: rgba(61,220,108,0.25); color: #e8f5ec; }

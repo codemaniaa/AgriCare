@@ -1,0 +1,142 @@
+/* ── Reset & Base ──────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Arimo:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=Raleway:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'Inter', sans-serif;
+   @apply font-inter;
+  background: #f8fdf9;
+  color: #1a2e1d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar          { width: 5px; height: 5px; }
+::-webkit-scrollbar-track    { background: #f0faf2; }
+::-webkit-scrollbar-thumb    { background: #74c69d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #40916c; }
+
+/* ── Links & buttons ───────────────────────────────────── */
+a { transition: opacity 0.15s; }
+button { transition: opacity 0.15s, transform 0.1s; }
+button:active:not(:disabled) { transform: scale(0.97); }
+button:disabled { opacity: 0.6 !important; cursor: not-allowed !important; }
+
+/* ── Focus rings ───────────────────────────────────────── */
+input:focus, select:focus, textarea:focus {
+  border-color: #40916c !important;
+  box-shadow: 0 0 0 3px rgba(64,145,108,0.12) !important;
+  outline: none;
+}
+
+/* ── Hover helpers ─────────────────────────────────────── */
+.hover-bg:hover  { background: #f0faf2 !important; }
+.hover-lift:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+
+/* ── Mobile bottom padding ─────────────────────────────── */
+@media (max-width: 768px) {
+  body { padding-bottom: 64px; }
+}
+
+/* ── Responsive grids ──────────────────────────────────── */
+.agricare-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.agricare-mgmt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.agricare-sidebar {
+  display: block;
+}
+
+/* ── Bottom nav hidden on desktop ──────────────────────── */
+.agricare-bnav {
+  display: none !important;
+}
+
+/* ── Tablet ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .agricare-product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .agricare-product-grid  { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .agricare-mgmt-grid     { grid-template-columns: repeat(2, 1fr) !important; }
+  .agricare-sidebar       { display: none !important; }
+  .agricare-bnav          { display: flex !important; }
+  .agricare-featured-card { min-width: 86% !important; }
+
+  /* Navbar: hide location button on mobile */
+  .agricare-loc-btn { display: none !important; }
+
+  /* Auth pages full width */
+  .auth-card { padding: 24px 16px !important; }
+}
+
+/* ── Small mobile ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .agricare-product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .agricare-detail-grid  { grid-template-columns: 1fr !important; }
+}
+
+/* ── Product detail two-column → single on mobile ──────── */
+.agricare-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .agricare-detail-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+}
+
+/* ── Chat layout ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .agricare-chat-list { width: 0 !important; overflow: hidden !important; min-width: 0 !important; }
+}
+
+/* ── Animations ────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.animate-fadeIn  { animation: fadeIn  0.25s ease forwards; }
+.animate-slideUp { animation: slideUp 0.3s  ease forwards; }
+
+.sk {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e8e2 50%, #f0f0f0 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+/* ── Toast ─────────────────────────────────────────────── */
+.agricare-toast {
+  animation: slideUp 0.25s ease;
+}
+
+/* ── Safe area insets (iPhone notch) ────────────────────── */
+.agricare-bnav {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

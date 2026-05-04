@@ -1,0 +1,16 @@
+Django==4.2.9
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.3.1
+django-filter==23.5
+drf-nested-routers==0.93.4
+psycopg2-binary==2.9.9
+Pillow==10.2.0
+python-dotenv==1.0.1
+gunicorn==21.2.0
+whitenoise==6.6.0
+channels==4.0.0
+channels-redis==4.2.0
+daphne==4.0.0
+requests==2.31.0
+asgiref==3.7.2
